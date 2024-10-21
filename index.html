@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coneast.net</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</head>
+<body id="body">
+  <div class="alert alert-warning" role="alert">
+    WARNING this website is under devlopment and may use placeholders that i do not calim to own.
+  </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>      
+    <noscript>
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              javascript is disabled. some parts may not work
+            </div>
+        </div>       
+        <style>
+          canvas {
+            visibility: hidden;
+          }
+        </style>
+    </noscript>
+    <header><button onclick="loadhome()"><b>home</b></button><button> <a href="./resume"><b>resume</b></a></button> <button onload="loadprojects()"><b>projects</b></button></header>
+    <div id="landing">
+      <br><br><br>
+      <span style="position: absolute; top: 50%; text-align: center; width: 100%; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; font-family: 'Courier New', Courier, monospace;"><h1>Connor Eastwood<br>programing extraordinaire</h1></span>
+      <canvas id="canvas" style="width: 100%; height: 95vh; padding: 0; margin: 0;"></canvas>
+      <br><br><br><br>
+      <div id="statement">
+        <div id="statement-card">
+          <span id="statement-span">
+            <br>
+            I'am a student who specialises in javascript and python, and aspires to be a backend or software developer
+          </span>
+          <span id="statement-year-span">
+            <br>
+            <span data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-placement="top" tabindex="0" data-bs-content="year's codeing means years since I started to code (2019) and not total days/hours codeing">
+              <div id="statement-years" title="years spent codeing" onloadeddata="years();">
+                <output id="years" style="margin: 30%;">?</output>
+              </div>
+            </span>
+            <h5>year's codeing</h5>
+          </span>
+        </div>
+      </div>
+      <br><br>
+      <div id="featuredprojects">
+        <h2 style="width: 80%; margin: 0 auto;">featured projects</h2>
+        <hr style="width: 80%; margin: 1% auto; height: 1vh; background-color: #fffefe;">
+        <br>
+        <span id="featuredprojects-span">
+          <div onclick="window.location = '?project_id=1'">
+            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
+            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
+            <h4>my new portfolio website</h4>
+          </div>
+          <div onclick="window.location = '?project_id=1'">
+            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
+            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
+            <h4>my new portfolio website</h4>
+          </div>
+          <div onclick="window.location = '?project_id=1'">
+            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
+            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
+            <h4>my new portfolio website</h4>
+          </div>
+          <div onclick="window.location = '?project_id=1'">
+            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
+            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
+            <h4>my new portfolio website</h4>
+          </div>
+          
+        </span>
+      </div>
+      <br>
+      <div id="ender">
+        copyright connor eastwood 2024
+      </div>
+    </div>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const c = canvas.getContext("2d");
+  
+      const fontHeight = 20;
+      const fontFamily = "Meiryo, monospace";
+  
+      const numbers = "0123456789";
+      const operators = "#+-\\/|=";
+      const katakana =
+        "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰヱヲ";
+      const hiragana =
+        "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞtたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをん";
+      const alphabet = numbers + operators + katakana + hiragana;
+  
+      const spawnInterval = 500;
+      const density = 0.7;
+  
+      const glitchInterval = 500;
+      const glitchAmount = 0.01;
+  
+      const moveScale = 0.012;
+  
+      const speedBase = 1.0;
+      const speedDeviation = 0.4;
+      const streaks = 1.9;
+  
+      const brightRatio = 0.5;
+  
+      const randomGlyph = () => {
+        return {
+          glyph: alphabet[Math.floor(Math.random() * alphabet.length)],
+          flipped: Math.random() < 0.5,
+          bright: Math.random() < brightRatio
+        };
+      };
+  
+      const makeUniverse = size => {
+        out = [];
+        for (let i = 0; i < size; i++) {
+          out.push(randomGlyph());
+        }
+        return out;
+      };
+      const universe = makeUniverse(1000);
+  
+      let w;
+      let h;
+  
+      let charHeight;
+      let colWidth;
+      let colsPerLine;
+      let charsOnCol;
+  
+      const setCanvasExtents = () => {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+        canvas.width = w;
+        canvas.height = h;
+  
+        // need to recalculate font properties when canvas is resized
+        c.font = fontHeight + "px " + fontFamily;
+        c.textBaseline = "top";
+        const charSize = c.measureText("ネ");
+  
+        colWidth = charSize.width * 1.15;
+        charHeight = fontHeight * 1.15;
+  
+        charsOnCol = Math.ceil(h / charHeight);
+        if (charsOnCol <= 0) {
+          charsOnCol = 1;
+        }
+        colsPerLine = Math.ceil(w / colWidth);
+        if (colsPerLine <= 0) {
+          colsPerLine = 1;
+        }
+      };
+  
+      setCanvasExtents();
+  
+      window.onresize = () => {
+        setCanvasExtents();
+      };
+  
+      const makeTrail = (col, maxSpeed = null, headAt = null) => {
+        let speed =
+          speedBase + (Math.random() * speedDeviation * 2 - speedDeviation);
+  
+        if (maxSpeed > 0 && speed > maxSpeed) {
+          speed = maxSpeed;
+        }
+  
+        if (headAt == null) {
+          headAt = -Math.floor(Math.random() * 2 * charsOnCol);
+        }
+  
+        return {
+          col: col,
+          universeAt: Math.floor(Math.random() * universe.length),
+          headAt: headAt,
+          speed: speed,
+          length: Math.floor(Math.random() * streaks * charsOnCol) + 8
+        };
+      };
+  
+      const trails = [];
+  
+      const clear = () => {
+        c.fillStyle = "black";
+        c.fillRect(0, 0, canvas.width, canvas.height);
+      };
+  
+      const rgb = "#008000";
+      const rgbBright = "#20E020";
+      const rgbHead = ["#F0FFF0", "#D0F0D0", "#80C080", "#40B040"];
+      const rgbTail = ["#000500", "#003000", "#005000", "#007000"];
+  
+      const drawTrail = trail => {
+        const head = Math.round(trail.headAt);
+  
+        // trail has yet to enter screen from above
+        if (head < 0) return;
+  
+        const x = trail.col * colWidth;
+        let y = head * charHeight + charHeight * 0.35;
+  
+        for (let i = 0; i < trail.length; i++, y -= charHeight) {
+          // went up beyond top screen edge?
+          if (y < 0) break;
+          // went down beyond bottom screen edge?
+          if (y > h) continue;
+  
+          const idx = (trail.universeAt + head - i) % universe.length;
+          const item = universe[idx];
+  
+          if (i < rgbHead.length) {
+            c.fillStyle = rgbHead[i];
+          } else if (trail.length - i - 1 < rgbTail.length) {
+            c.fillStyle = rgbTail[trail.length - i - 1];
+          } else {
+            if (item.bright) {
+              c.fillStyle = rgbBright;
+            } else {
+              c.fillStyle = rgb;
+            }
+          }
+  
+          if (item.flipped) {
+            c.setTransform(-1, 0, 0, 1, 0, 0);
+            c.fillText(item.glyph, -x - colWidth, y);
+            c.setTransform(1, 0, 0, 1, 0, 0);
+          } else {
+            c.fillText(item.glyph, x, y);
+          }
+        }
+      };
+  
+      const moveTrails = distance => {
+        const trailsToRemove = [];
+  
+        const count = trails.length;
+        for (let i = 0; i < count; i++) {
+          const trail = trails[i];
+          trail.headAt += trail.speed * distance;
+  
+          const tip = trail.headAt - trail.length;
+          // if the trail went far enough down to be invisible, mark it for removal
+          if (tip * charHeight > h) {
+            trailsToRemove.push(i);
+          }
+        }
+  
+        // remove trails that went entirely beyond screen bottom edge
+        while (trailsToRemove.length > 0) {
+          trails.splice(trailsToRemove.pop(), 1);
+        }
+      };
+  
+      const spawnTrails = () => {
+        // find topmost trail on each column
+        const topTrailPerCol = [];
+        for (let i = 0; i < trails.length; i++) {
+          const trail = trails[i];
+          const trailTop = trail.headAt - trail.length;
+          const top = topTrailPerCol[trail.col];
+          if (!top || top.headAt - top.length > trailTop) {
+            topTrailPerCol[trail.col] = trail;
+          }
+        }
+  
+        // spawn new trails
+        for (let i = 0; i < colsPerLine; i++) {
+          let spawnProbability = 0.0;
+          let maxSpeed = null;
+          let headAt = null;
+  
+          if (!topTrailPerCol[i]) {
+            // column has no trail at all
+            // we'll try and add one
+            // this most commonly happens at the beginning of the animation
+            // when few trails have spawned yet
+            spawnProbability = 1.0;
+          } else {
+            // column has a trail
+            const topTrail = topTrailPerCol[i];
+            const tip = Math.round(topTrail.headAt) - topTrail.length;
+            if (tip > 0) {
+              // if trail's top tip is on screen
+              // we might spawn another one
+              // probability rises the further down the tip is
+              const emptySpaceRatio = tip / charsOnCol;
+              spawnProbability = emptySpaceRatio;
+              // heuristic limiting speed of new trail chasint the existing one
+              //  we don't want the chasing trail to catch up
+              maxSpeed = topTrail.speed * (1 + emptySpaceRatio);
+              // we'll spawn the follow up at the top of the screen
+              headAt = 0;
+            }
+          }
+  
+          // scale the probabilities by density
+          const effectiveP = spawnProbability * density;
+  
+          // spawn?
+          const p = Math.random();
+  
+          if (p < effectiveP) {
+            trails.push(makeTrail(i, maxSpeed, headAt));
+          }
+        }
+      };
+  
+      const glitchUniverse = count => {
+        for (let i = 0; i < count; i++) {
+          const idx = Math.floor(Math.random() * universe.length);
+          universe[idx] = randomGlyph();
+        }
+      };
+  
+      let prevTime;
+      let glitchCollect = 0;
+      let spawnCollect = 0;
+  
+      const init = time => {
+        prevTime = time;
+        requestAnimationFrame(tick);
+      };
+  
+      const tick = time => {
+        let elapsed = time - prevTime;
+        prevTime = time;
+  
+        moveTrails(elapsed * moveScale);
+  
+        spawnCollect += elapsed;
+        while (spawnCollect > spawnInterval) {
+          spawnCollect -= spawnInterval;
+          spawnTrails();
+        }
+  
+        glitchCollect += elapsed;
+        while (glitchCollect > glitchInterval) {
+          glitchCollect -= glitchInterval;
+          glitchUniverse(Math.floor(universe.length * glitchAmount));
+        }
+  
+        clear();
+  
+        const count = trails.length;
+        for (var i = 0; i < count; i++) {
+          const trail = trails[i];
+          drawTrail(trail);
+        }
+  
+        requestAnimationFrame(tick);
+      };
+  
+      requestAnimationFrame(init);
+    </script>
+</body>
+</html>

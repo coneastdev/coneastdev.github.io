@@ -1,0 +1,155 @@
+#body {
+    background-color: #222323;
+    margin: 0;
+    color: #fffefe;
+}
+
+#statement {
+    width: 100%;
+    height: 60vh;
+}
+
+#ender {
+    background-color: #1b1b1b;
+    color: #555;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    display: flexbox;
+    position: fixed;
+    background-color: #222323;
+    z-index: 999;
+}
+
+header button {
+    margin: 1%;
+    width: 10%;
+    height: 5vh;
+    text-decoration: none;
+    color: #fffefe;
+    border-radius: 30px;
+    background-color: #222323;
+    border-style: none;
+}
+header button:hover {
+    background-color: #1b1b1b;
+}
+a:link {
+    text-decoration: none;
+    color: #fffefe;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #fffefe;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fffefe;
+}
+
+a:active {
+    text-decoration: none;
+    color: #fffefe;
+}
+
+.fixed {
+    position: absolute;
+}
+/* If the screen size is 601px wide or more */
+@media screen and (min-width: 601px) {
+    header button {
+        font-size: 110%;
+    }
+    #statement-card {
+        margin: 0 auto;
+        height: 45vh;
+        width: 45%;
+        background-color: #333;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px 15px;
+        font-size: 2vw;
+    }
+    #statement-years {
+        height: 12vh;
+        margin: 15%;
+        width: 60%;
+        text-align: center;
+        background-color: #222323;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px 15px;
+    }
+    #statement-span {
+        position: absolute; 
+        width: 30%; 
+        margin: 2%;
+    }
+    #statement-year-span {
+        position: absolute; 
+        width: 9%; 
+        margin: 2%; 
+        right: 27%;
+    }
+    #statement-years:hover {
+        box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
+    }
+    #featuredprojects-span {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+        overflow: hidden;
+    }
+    #featuredprojects-span div {
+        width: 25%;
+        height: 22vw;
+        background-color: #333;
+        border-radius: 15px 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 1%;
+        margin: 1%;
+    }
+    #featuredprojects-span div:hover {
+        box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
+    }
+}
+  
+  /* If the screen size is 600px wide or less */
+  @media screen and (max-width: 600px) {
+    header button {
+        font-size: 3.5vw;
+    }
+    #statement-card {
+        margin: 0 auto;
+        height: 30vh;
+        width: 90%;
+        background-color: #333;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px 15px;
+        font-size: 5vw;
+    }
+    #statement-years {
+        height: 6vh;
+        margin: 15%;
+        width: 60%;
+        text-align: center;
+        background-color: #222323;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px 15px;
+    }
+    #statement-span {
+        position: absolute; 
+        width: 50%; 
+        margin: 4%;
+    }
+    #statement-year-span {
+        position: absolute; 
+        width: 20%; 
+        margin: 2%; 
+        right: 15%;
+    }
+}
