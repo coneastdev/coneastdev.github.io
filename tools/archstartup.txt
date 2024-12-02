@@ -1,0 +1,41 @@
+setfont -d
+loadkeys uk
+timedatectl set-timezone Europe/London
+cfdisk # make 1gb partion a 8gb+ partion and a 30gb+ partion
+lsblk
+mkfs.ext4 /dev/sda3
+mkfs.fat -F 32 /dev/sda1
+mkswap /dev/sda2
+lsblk
+mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot
+swapon /dev/sda2
+lsblk
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+pacstrap -K /mnt base linux linux-firmware base-devel nano amd-ucode sof-firmware networkmanager pacman-contrib nvidia/vulkan-radeon
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+hwclock --systohc
+locale-gen
+nano /etc/locale.gen
+nano /etc/locale.conf LANG=en_GB.UTF-8
+nano /etc/vconsole.conf
+nano /etc/hostname
+systemctl enable NetworkManager.service
+systemctl enable systemd-timesyncd.service
+systemctl enable fstrim.timer
+nano /etc/pacman.conf
+passwd [rootpassword]
+useradd -m -g users -G wheel,storage,power -s /bin/bash rando
+passwd rando [password]
+EDITOR=nano visudo
+Defaults rootpw
+pacman -Syu grub efibootmgr ufw gufw cinnamon wayland gnome-terminal cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon muffin nemo firefox
+systemctl enable gdm.service
+grub-install --efi-directory=boot
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+reboot
+step 41 enjoy your new install =D
