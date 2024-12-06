@@ -3,375 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coneast.net</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>coneastdev</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
 </head>
-<body id="body">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
-      </svg>      
-    <noscript>
-        <div class="alert alert-warning d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-            <div>
-              javascript is disabled. some parts may not work
-            </div>
-        </div>       
-        <style>
-          canvas {
-            visibility: hidden;
-          }
-        </style>
-    </noscript>
-    <header><button onclick="loadhome()"><b>home</b></button><button> <a location="_blank" href="./cv.pdf"><b>cv</b></a></button> <button onload="loadprojects()"><b>projects</b></button></header>
-    
-    <div id="landing">
-      <br><br><br>
-      <div class="alert alert-warning" role="alert">
-          WARNING this website is under devlopment and may use placeholders that i do not calim to own.
-      </div>
-      <span style="position: absolute; top: 50%; text-align: center; width: 100%; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000; font-family: 'Courier New', Courier, monospace;"><h1>Connor Eastwood<br>programing extraordinaire</h1></span>
-      <canvas id="canvas" style="width: 100%; height: 95vh; padding: 0; margin: 0;"></canvas>
-      <br><br><br><br>
-      <div id="statement">
-        <div id="statement-card">
-          <span id="statement-span">
-            <br>
-            I'am a student who specialises in javascript and python, and aspires to be a backend or software developer
-          </span>
-          <span id="statement-year-span">
-            <br>
-            <span data-bs-trigger="hover focus" data-bs-toggle="popover" data-bs-placement="top" tabindex="0" data-bs-content="year's codeing means years since I started to code (2019) and not total days/hours codeing">
-              <div id="statement-years" title="years spent codeing" onloadeddata="years();">
-                <output id="years" style="margin: 30%;">?</output>
+<body>
+    <header>
+        <nav id="nav" class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a style="color: #fffefe;" class="navbar-brand" href="#">ConEastDev</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span style="color: #fffefe;" class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"><i class="bi bi-house"></i> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/coneastdev/coneastdev.github.io"><i class="bi bi-github"></i> Repo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://coneastdev.github.io/cv.pdf"><i class="bi bi-file-earmark-person"></i> CV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-telephone"></i> Contact</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-code-slash"></i> Websites
+                    </a>
+                    <ul class="dropdown-menu bg-dark" style="color: #fffefe;">
+                      <li><a class="dropdown-item" target="_blank" href="https://coneastdev.github.io/web/">Collection repo</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" target="_blank" href="https://coneastdev.github.io/web/geekyclips/">Geeky clips</a></li>
+                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-braces"></i> Software
+                    </a>
+                    <ul class="dropdown-menu bg-dark" style="color: #fffefe;">
+                      <li><h4 style="color: #fffefe;" class="dropdown-item">java</h4></li>
+                      <li><a class="dropdown-item" href="#">Example project</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><h4 style="color: #fffefe;" class="dropdown-item">c++</h4></li>
+                      <li><a class="dropdown-item" href="#">Example project</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><h4 style="color: #fffefe;" class="dropdown-item">python</h4></li>
+                      <li><a class="dropdown-item" href="#">Example project</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-book"></i> Blogs
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                      <li><a class="dropdown-item" href="#">Nothing here right now</a></li>
+                    </ul>
+                  </li>
               </div>
-            </span>
-            <h5>year's codeing</h5>
+            </div>
+        </nav>
+    </header>   
+    <div id="landing">
+      <div id="about-div">
+        <h2 id="mobile-notice">Notice, this website is <b>not</b> intended to be accessed via <b>phone</b> and is <b>reccomended</b> via <b>desktop</b> for a better expirance</h2>
+        <div id="about-card">
+          <img src="./media/mugshot.png" id="mugshot" width="20%" style="border-radius: 1000px; margin: 7.5%; border: rgb(31, 92, 31) dashed 3px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+          <button id="mug-btn" onclick="toggle_fliping()"><i class="bi bi-pause-circle"></i></button>
+          <span style="margin: 6%;">
+            <h1 id="about-name"><b>Connor Eastwood</b></h1>
+            <h4 id="about-description">Digital technologys student<br> at middlesbrough college<br>who is working towards a career<br>in software devlopment</h4>
           </span>
         </div>
       </div>
-      <br><br>
-      <object data="./cv.pdf" type="application/pdf" width="100%" height="500px">
-          <p>Unable to display PDF file. <a href="./cv.pdf">Download</a> instead.</p>
-      </object>
-      <br><br>
-      <div id="featuredprojects">
-        <h2 style="width: 80%; margin: 0 auto;">featured projects</h2>
-        <hr style="width: 80%; margin: 1% auto; height: 1vh; background-color: #fffefe;">
+      <div id="fav-projects-div">
         <br>
-        <span id="featuredprojects-span">
-          <div onclick="window.location = '?project_id=1'">
-            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
-            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
-            <h4>my new portfolio website</h4>
+        <span id="fav-pro-span">
+          <div id="web-car" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./media/geekclips.PNG" class="d-block w-100" alt="image not loading...">
+              </div>
+              <div class="carousel-item">
+                <img src="./media/main.PNG" class="d-block w-100" alt="image not loading...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="image not loading...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#web-car" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#web-car" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div onclick="window.location = '?project_id=1'">
-            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
-            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
-            <h4>my new portfolio website</h4>
+          <div id="soft-car" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="image not loading...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="image not loading...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="image not loading...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#soft-car" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#soft-car" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div onclick="window.location = '?project_id=1'">
-            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
-            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
-            <h4>my new portfolio website</h4>
+        </span>
+        <span style="display: flex;">
+          <div style="width: 52%; height: 40vh; margin: 3%;">
+            <h1><b>Featured websites</b></h1>
+            <h4>Websites I have worked on or created<br>this contains mostly html,css and js and some node.js</h4>
           </div>
-          <div onclick="window.location = '?project_id=1'">
-            <img style="width: 70%; margin: 3%; border: #1b1b1b 5px solid; border-radius: 5px 5px;" src="./media/projects/conest.net.png">
-            <h3>coneast.net <span class="badge text-bg-success">new</span></h3>
-            <h4>my new portfolio website</h4>
+          <div style="width: 48%; height: 40vh; margin: 3%;">
+            <h1><b>Featured software</b></h1>
+            <h4>Software I have worked on or created<br>this contains python, c++ and java software</h4>
           </div>
-          
         </span>
       </div>
-      <br><br><br>
-<!--       <div id="ender">
-        
-      </div> -->
+      <div id="cv-div">
+        <div id="fav-work">
+          <h2>Featured workplacements</h2>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%">
+        </div>
+        <object id="cv" data="https://coneastdev.github.io/cv.pdf" type="application/pdf">
+          <p>Unable to display PDF file. <a href="https://coneastdev.github.io/cv.pdf">Go to source</a></p>
+        </object>
+        <div id="fav-vol">
+          <h2>Featured<br>voulintering</h2>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%"><br>
+          <img src="./media/placeholder.png" style="border-radius: 1000px; border: double rgb(31, 92, 31) 4px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; margin: 2%;" width="40%">
+        </div>
+      </div>
+      <div id="skills-div" style="width: 100%; height: 120vh; background-color: #22222a; color: #fffefe; text-align: center;">
+        <br>
+        <h1>Skills</h1>
+        <h3>hover over badges for description, underlined text are links<br><span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="This green tag means I have experience or teaching in this">Experience</span> <span class="badge text-bg-primary" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="This blue tag means I have a certfication or qualification for said skill">Certification</span></h3>
+        <span id="skills-span">
+          <div id="techskills">
+            <h1 style="margin: 1%;"><b>Technical skills</b></h1>
+            <div class="skillbox" style="overflow-y: scroll; width: 80%; height: 50vh; margin: 5% auto; text-align: left;">
+              <div style="border: solid #555 2px;">
+                <h3>Web devlopment <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experience with website devlopment includeing HTML,CSS and JS as well as libraries like bootstrap(was used in this website)">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Python <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experience in makeing python projects and json based data bases">Experience</span> <span class="badge text-bg-primary" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have recived a GCSE grade 6 in computer sciencem this was not specilised in python but we coverd it">GCSE</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>js and node js <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experience in makeing server side websites useing node js and makeing discord bots">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Psudo code and flow diagrams <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experience in makeing psudo code and flow diagrams and converting them to code">Expiriance</span> <span class="badge text-bg-primary" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have a GCSE computer science grade 6 where we did psudo code and flow diagrams and converting it to python">GCSE</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Computer instilation <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have built my own PC and have swaped my HP laptops HDD for WD SSD, I had to buy my own parts and decide on which parts I want/need for my system">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Linux <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I use arch linux as my daily drive and install it manualy, as such I have experience with working in comand line and know how to do some commands">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Agile metheodoligies <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have read about agile methodoligys from artisan and have read the book scrum for dummys">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3><a target="_blank" style="color: #fffefe;" href="./media/wireframe.pdf">Wire frames <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have been tought about wire frames and have practical experience in it, this website was designed via wire frame click on the text to see">Experience</span></a></h3>
+              </div>
+            </div>
+          </div>
+          <div id="softskills">
+            <h1 style="margin: 1%;"><b>Soft skills</b></h1>
+            <div class="skillbox" style="overflow-y: scroll; width: 80%; height: 50vh; margin: 5% auto; text-align: left;">
+              <div style="border: solid #555 2px;">
+                <h3>Decomposition <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="My high-functioning autisim makes me good at this and I have hands on experience in doing this">Inate skill</span> <span class="badge text-bg-primary" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="GCSE grade 6 computer science">GCSE</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Teamwork <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have enacted and practiced this at middlesbrough college when speeking and colabarateing with fellow students">Expiriance</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Time mangement <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experienced and learnt about time mangement, this involves scheduling and efficiant resource use, I curuntly have 100% punctuality at middlesbrough college">Experience</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Listining <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have some experience listining to people and trying to let them vent there emotions without judgement as I have first hand knowledge that bottleing them up is unhealthy">Experience</span> <span class="badge text-bg-primary" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have a grade 3 in GCSE psychology, this does not include doing therapy but involves how humans work and behavoural psychoology like growth and praise">GCSE</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Conflict mangement <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="Growing up I had large issues with anger mangement, as such I have recived a large amount of training for this and how to solve souloutions without conflict like violance or shouting as this does not contribute to getting things done or a healthy workplace">Experience</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Problem solveing <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have experience with problem solveing like debuging code or comeing up with work arounds, mind you I am not the fastest when it comes to this as I dont usaly come up with spontanias ideas and need a bit of time">Experience</span></h3>
+              </div>
+              <div style="border: solid #555 2px;">
+                <h3>Evaluateing <span class="badge text-bg-success" style="font-size: 1.5vh;" data-bs-toggle="tooltip" data-bs-title="I have many times had to break down and evaluate scenarios and concepts dueing my time at middlesbrough college">Experience</span></h3>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div id="contact" style="width: 100%; background-image: url(./media/matrixtrails.jpg); height: 100vh; background-color: #22222a;">
+        <div id="contact-card">
+          <i class="bi bi-linkedin" id="linkedin"></i>
+          <span style="margin: 6%;">
+            <h1 id="about-name"><b>Contact me on linkedIn</b></h1>
+            <h4 id="about-description">I am not curuntly looking for work but I will save any offers for later, best regards -Connor Eastwood</h4><br><a id="linkedin-link" target="_blank" href="https://www.linkedin.com/in/connor-e-2406b2313">www.linkedin.com/in/connor-e-2406b2313</a></h4>
+          </span>
+        </div>
+      </div>
     </div>
-    <script>
-      const canvas = document.getElementById("canvas");
-      const c = canvas.getContext("2d");
-  
-      const fontHeight = 20;
-      const fontFamily = "Meiryo, monospace";
-  
-      const numbers = "0123456789";
-      const operators = "#+-\\/|=";
-      const katakana =
-        "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰヱヲ";
-      const hiragana =
-        "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞtたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをん";
-      const alphabet = numbers + operators + katakana + hiragana;
-  
-      const spawnInterval = 500;
-      const density = 0.7;
-  
-      const glitchInterval = 500;
-      const glitchAmount = 0.01;
-  
-      const moveScale = 0.012;
-  
-      const speedBase = 1.0;
-      const speedDeviation = 0.4;
-      const streaks = 1.9;
-  
-      const brightRatio = 0.5;
-  
-      const randomGlyph = () => {
-        return {
-          glyph: alphabet[Math.floor(Math.random() * alphabet.length)],
-          flipped: Math.random() < 0.5,
-          bright: Math.random() < brightRatio
-        };
-      };
-  
-      const makeUniverse = size => {
-        out = [];
-        for (let i = 0; i < size; i++) {
-          out.push(randomGlyph());
-        }
-        return out;
-      };
-      const universe = makeUniverse(1000);
-  
-      let w;
-      let h;
-  
-      let charHeight;
-      let colWidth;
-      let colsPerLine;
-      let charsOnCol;
-  
-      const setCanvasExtents = () => {
-        w = document.body.clientWidth;
-        h = document.body.clientHeight;
-        canvas.width = w;
-        canvas.height = h;
-  
-        // need to recalculate font properties when canvas is resized
-        c.font = fontHeight + "px " + fontFamily;
-        c.textBaseline = "top";
-        const charSize = c.measureText("ネ");
-  
-        colWidth = charSize.width * 1.15;
-        charHeight = fontHeight * 1.15;
-  
-        charsOnCol = Math.ceil(h / charHeight);
-        if (charsOnCol <= 0) {
-          charsOnCol = 1;
-        }
-        colsPerLine = Math.ceil(w / colWidth);
-        if (colsPerLine <= 0) {
-          colsPerLine = 1;
-        }
-      };
-  
-      setCanvasExtents();
-  
-      window.onresize = () => {
-        setCanvasExtents();
-      };
-  
-      const makeTrail = (col, maxSpeed = null, headAt = null) => {
-        let speed =
-          speedBase + (Math.random() * speedDeviation * 2 - speedDeviation);
-  
-        if (maxSpeed > 0 && speed > maxSpeed) {
-          speed = maxSpeed;
-        }
-  
-        if (headAt == null) {
-          headAt = -Math.floor(Math.random() * 2 * charsOnCol);
-        }
-  
-        return {
-          col: col,
-          universeAt: Math.floor(Math.random() * universe.length),
-          headAt: headAt,
-          speed: speed,
-          length: Math.floor(Math.random() * streaks * charsOnCol) + 8
-        };
-      };
-  
-      const trails = [];
-  
-      const clear = () => {
-        c.fillStyle = "black";
-        c.fillRect(0, 0, canvas.width, canvas.height);
-      };
-  
-      const rgb = "#008000";
-      const rgbBright = "#20E020";
-      const rgbHead = ["#F0FFF0", "#D0F0D0", "#80C080", "#40B040"];
-      const rgbTail = ["#000500", "#003000", "#005000", "#007000"];
-  
-      const drawTrail = trail => {
-        const head = Math.round(trail.headAt);
-  
-        // trail has yet to enter screen from above
-        if (head < 0) return;
-  
-        const x = trail.col * colWidth;
-        let y = head * charHeight + charHeight * 0.35;
-  
-        for (let i = 0; i < trail.length; i++, y -= charHeight) {
-          // went up beyond top screen edge?
-          if (y < 0) break;
-          // went down beyond bottom screen edge?
-          if (y > h) continue;
-  
-          const idx = (trail.universeAt + head - i) % universe.length;
-          const item = universe[idx];
-  
-          if (i < rgbHead.length) {
-            c.fillStyle = rgbHead[i];
-          } else if (trail.length - i - 1 < rgbTail.length) {
-            c.fillStyle = rgbTail[trail.length - i - 1];
-          } else {
-            if (item.bright) {
-              c.fillStyle = rgbBright;
-            } else {
-              c.fillStyle = rgb;
-            }
-          }
-  
-          if (item.flipped) {
-            c.setTransform(-1, 0, 0, 1, 0, 0);
-            c.fillText(item.glyph, -x - colWidth, y);
-            c.setTransform(1, 0, 0, 1, 0, 0);
-          } else {
-            c.fillText(item.glyph, x, y);
-          }
-        }
-      };
-  
-      const moveTrails = distance => {
-        const trailsToRemove = [];
-  
-        const count = trails.length;
-        for (let i = 0; i < count; i++) {
-          const trail = trails[i];
-          trail.headAt += trail.speed * distance;
-  
-          const tip = trail.headAt - trail.length;
-          // if the trail went far enough down to be invisible, mark it for removal
-          if (tip * charHeight > h) {
-            trailsToRemove.push(i);
-          }
-        }
-  
-        // remove trails that went entirely beyond screen bottom edge
-        while (trailsToRemove.length > 0) {
-          trails.splice(trailsToRemove.pop(), 1);
-        }
-      };
-  
-      const spawnTrails = () => {
-        // find topmost trail on each column
-        const topTrailPerCol = [];
-        for (let i = 0; i < trails.length; i++) {
-          const trail = trails[i];
-          const trailTop = trail.headAt - trail.length;
-          const top = topTrailPerCol[trail.col];
-          if (!top || top.headAt - top.length > trailTop) {
-            topTrailPerCol[trail.col] = trail;
-          }
-        }
-  
-        // spawn new trails
-        for (let i = 0; i < colsPerLine; i++) {
-          let spawnProbability = 0.0;
-          let maxSpeed = null;
-          let headAt = null;
-  
-          if (!topTrailPerCol[i]) {
-            // column has no trail at all
-            // we'll try and add one
-            // this most commonly happens at the beginning of the animation
-            // when few trails have spawned yet
-            spawnProbability = 1.0;
-          } else {
-            // column has a trail
-            const topTrail = topTrailPerCol[i];
-            const tip = Math.round(topTrail.headAt) - topTrail.length;
-            if (tip > 0) {
-              // if trail's top tip is on screen
-              // we might spawn another one
-              // probability rises the further down the tip is
-              const emptySpaceRatio = tip / charsOnCol;
-              spawnProbability = emptySpaceRatio;
-              // heuristic limiting speed of new trail chasint the existing one
-              //  we don't want the chasing trail to catch up
-              maxSpeed = topTrail.speed * (1 + emptySpaceRatio);
-              // we'll spawn the follow up at the top of the screen
-              headAt = 0;
-            }
-          }
-  
-          // scale the probabilities by density
-          const effectiveP = spawnProbability * density;
-  
-          // spawn?
-          const p = Math.random();
-  
-          if (p < effectiveP) {
-            trails.push(makeTrail(i, maxSpeed, headAt));
-          }
-        }
-      };
-  
-      const glitchUniverse = count => {
-        for (let i = 0; i < count; i++) {
-          const idx = Math.floor(Math.random() * universe.length);
-          universe[idx] = randomGlyph();
-        }
-      };
-  
-      let prevTime;
-      let glitchCollect = 0;
-      let spawnCollect = 0;
-  
-      const init = time => {
-        prevTime = time;
-        requestAnimationFrame(tick);
-      };
-  
-      const tick = time => {
-        let elapsed = time - prevTime;
-        prevTime = time;
-  
-        moveTrails(elapsed * moveScale);
-  
-        spawnCollect += elapsed;
-        while (spawnCollect > spawnInterval) {
-          spawnCollect -= spawnInterval;
-          spawnTrails();
-        }
-  
-        glitchCollect += elapsed;
-        while (glitchCollect > glitchInterval) {
-          glitchCollect -= glitchInterval;
-          glitchUniverse(Math.floor(universe.length * glitchAmount));
-        }
-  
-        clear();
-  
-        const count = trails.length;
-        for (var i = 0; i < count; i++) {
-          const trail = trails[i];
-          drawTrail(trail);
-        }
-  
-        requestAnimationFrame(tick);
-      };
-  
-      requestAnimationFrame(init);
-    </script>
+    <div style="background-color: #22222a; color: #aaa;">
+      Copyright (c) 2024 <a href="https://github.com/coneastdev">coneastdev</a> under MIT licence <a href="https://github.com/coneastdev/coneastdev.github.io/blob/main/LICENSE">(see here)</a> background image is owned by <a href="https://github.com/xbmc">kodi.tv</a> under GPL-2.0 licence <a href="https://github.com/xbmc/screensaver.matrixtrails/blob/Piers/LICENSE.md">(see here)</a>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
