@@ -1,45 +1,35 @@
-const projects = {
-    0:{
-        "name":"example",
-        "status":"complete",
-        "description":"this si an example project",
-        "date":"dd/mm/yy",
-        "link":"https://github.com"
+let fliped = 0
+let fliping = true
+
+setTimeout(() => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+}, 100);
+
+setInterval(() => {
+    if (fliping == true) {
+        if (fliped == 0) {
+            document.getElementById("mugshot").style.transform = "rotateY(180deg)"
+            fliped = 1
+        } else if (fliped == 1) {
+            document.getElementById("mugshot").style.transform = "scaleY(-1)"
+            fliped = 2
+        } else if (fliped == 2) {
+            document.getElementById("mugshot").style.transform = "rotateY(-180deg) scaleY(-1)"
+            fliped = 3
+        } else if (fliped == 3) {
+            document.getElementById("mugshot").style.transform = ""
+            fliped = 0
+        }
     }
-}
-const project_id =  new URLSearchParams(window.location.search).get('project_id');
-console.log(project_id);
-if (project_id != null) {
-    console.log(project_id)
-}
+}, 1000);
 
-// ctx.addEventListener('load', () => {
-//     const matrix = document.getElementById("matrix");
-//     const ctx = matrix.getContext("2d");
-//     ctx.canvas.width  = window.innerWidth;
-// })
-// console.log(matrix)
-
-const date = new Date();
-let yearscodeing = Number(date.getFullYear()) - 2019
-let yearsnum = 0
-function years() {
-    if (yearsnum < yearscodeing + 1) {
-        document.getElementById("years").innerText = yearsnum.toString()
-        yearsnum++
-        setTimeout(years,500)
-    }
-}
-
-userHasScrolled = false;
-window.onscroll = () => {
-    if (userHasScrolled == false) {
-        userHasScrolled = true;
-        document.getElementById("years").innerText = 0
-        setTimeout(years,1000)
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl)
-        })
+function toggle_fliping() {
+    if (fliping == true) { 
+        document.getElementById("mug-btn").innerHTML = '<i class="bi bi-play-circle"></i>'
+        fliping = false
+    } else {
+        document.getElementById("mug-btn").innerHTML = '<i class="bi bi-pause-circle"></i>'
+        fliping =true
     }
 }
