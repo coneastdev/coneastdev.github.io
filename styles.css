@@ -1,155 +1,297 @@
-#body {
-    background-color: #222323;
+html {
+    background-color: #22222a;
     margin: 0;
+}
+
+#about-div {
+    background-image: url("media/matrixtrails.jpg");
+    width: 100%;
+    height: 95svh;
     color: #fffefe;
 }
 
-#statement {
-    width: 100%;
-    height: 60vh;
+#about-card {
+    width: 60%;
+    height: 50vh;
+    border-radius: 20px;
+    background-color: #22222a;
+    top: 30vh;
+    left: 20vw;
+    position: absolute;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
 }
 
-#ender {
-    background-color: #1b1b1b;
-    color: #555;
+#contact-card{
+    width: 80%;
+    height: 50vh;
+    border-radius: 20px;
+    background-color: #22222a;
+    top: 480vh;
+    left: 10vw;
+    position: absolute;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    color: #fffefe;
+}
+
+#mug-btn {
+    width: 10%;
+    height: 15vh;
+    font-size: 3vw;
+    opacity: 0;
+    position: absolute;
+    left: 7.5vw;
+    top: 17vh;
+    border-radius: 1000px;
+    background-color: #333;
+    border-color: #fffefe;
+    color: #fffefe;
+}
+
+#mug-btn:hover {
+    opacity: 0.7;
+}
+
+#mugshot:hover + #mug-btn {
+    opacity: 0.7;
+}
+
+#about-name {
+    font-size: 3.5vw;
+}
+
+#about-description {
+    font-size: 2vw;
 }
 
 header {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+#nav {
+    background-color: #22222a;
+}
+#nav li a {
+    color: #fffefe;
+}
+
+#fav-projects-div {
     width: 100%;
+    height: 120vh;
+    background-color: #22222a;
+    color: #fffefe;
+}
+
+.carousel {
+    width: 45%;
+    height: 60vh;
+    background-color: rgb(31, 92, 31);
+    margin: 3%;
+    color: #fffefe;
+}
+
+#web-car {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+#soft-car {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+#cv-div {
     text-align: center;
-    display: flexbox;
-    position: fixed;
-    background-color: #222323;
-    z-index: 999;
+    background-color: #22222a;
+    color: #fffefe;
+    display: flex;
 }
 
-header button {
-    margin: 1%;
-    width: 10%;
-    height: 5vh;
-    text-decoration: none;
-    color: #fffefe;
-    border-radius: 30px;
-    background-color: #222323;
-    border-style: none;
-}
-header button:hover {
-    background-color: #1b1b1b;
-}
-a:link {
-    text-decoration: none;
-    color: #fffefe;
+#cv {
+    width: 60%;
+    height: 105vh;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-a:visited {
-    text-decoration: none;
-    color: #fffefe;
+#techskills {
+    margin: 4.5%;
+    width: 40%;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: #333;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
 
-a:hover {
-    text-decoration: none;
-    color: #fffefe;
+#softskills {
+    margin: 4.5%;
+    width: 40%;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: #333;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
-a:active {
-    text-decoration: none;
-    color: #fffefe;
+#fav-pro-span {
+    display: flex;
 }
 
-.fixed {
-    position: absolute;
+#skills-span {
+    text-align: center; 
+    display: flex; 
+    color: #fffeff;
 }
-/* If the screen size is 601px wide or more */
-@media screen and (min-width: 601px) {
-    header button {
-        font-size: 110%;
-    }
-    #statement-card {
-        margin: 0 auto;
-        height: 45vh;
-        width: 45%;
-        background-color: #333;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 15px 15px;
-        font-size: 2vw;
-    }
-    #statement-years {
-        height: 12vh;
-        margin: 15%;
-        width: 60%;
+
+#linkedin {
+    font-size: 15vw; 
+    padding: 1%;
+}
+
+#linkedin-link {
+    font-size: 2vw;
+}
+
+#mobile-notice {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    #about-card {
+        width: 100%;
+        left: 0;
+        top: 20vh;
+        display: inline;
         text-align: center;
-        background-color: #222323;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 15px 15px;
+        height: 130vw;
     }
-    #statement-span {
-        position: absolute; 
-        width: 30%; 
-        margin: 2%;
+    #mugshot {
+        width: 50%;
     }
-    #statement-year-span {
-        position: absolute; 
-        width: 9%; 
-        margin: 2%; 
-        right: 27%;
+    #about-name {
+        font-size: 10vw;
     }
-    #statement-years:hover {
-        box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
-    }
-    #featuredprojects-span {
-        display: flex;
-        width: 80%;
-        margin: 0 auto;
-        height: auto;
-        overflow: hidden;
-    }
-    #featuredprojects-span div {
-        width: 25%;
-        height: 22vw;
-        background-color: #333;
-        border-radius: 15px 15px;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        padding: 1%;
-        margin: 1%;
-    }
-    #featuredprojects-span div:hover {
-        box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
-    }
-}
-  
-  /* If the screen size is 600px wide or less */
-  @media screen and (max-width: 600px) {
-    header button {
-        font-size: 3.5vw;
-    }
-    #statement-card {
-        margin: 0 auto;
-        height: 30vh;
-        width: 90%;
-        background-color: #333;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 15px 15px;
+    #about-description {
         font-size: 5vw;
     }
-    #statement-years {
-        height: 6vh;
-        margin: 15%;
-        width: 60%;
+    #mug-btn {
+        opacity: 0.7;
+        width: 20%;
+        font-size: 10vw;
+        left: 1vw;
+        top: 11vh;
+    }
+    #fav-pro-span {
+        display: inline;
+    }
+    .carousel {
+        width: 100%;
+        height: 30vh;
+        background-color: rgb(31, 92, 31);
+        margin: 0;
+        color: #fffefe;
+    }
+    #web-car {
+        box-shadow: none;
+    }
+    #soft-car {
+        box-shadow: none;
+    }
+    #cv-div {
         text-align: center;
-        background-color: #222323;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 15px 15px;
+        background-color: #22222a;
+        color: #fffefe;
+        display: inline;
     }
-    #statement-span {
-        position: absolute; 
-        width: 50%; 
-        margin: 4%;
+    
+    #cv {
+        width: 100%;
+        height: 60vh;
+        box-shadow: none;
     }
-    #statement-year-span {
-        position: absolute; 
-        width: 20%; 
-        margin: 2%; 
-        right: 15%;
+
+    #fav-work {
+        display: flex;
+        width: 100%;
+        background-color: #22222a;
+    }
+
+    #fav-work img {
+        width: 25%;
+    }
+
+    #fav-work h2 {
+        display: none;
+    }
+
+    #fav-vol {
+        display: flex;
+        width: 100%;
+        background-color: #22222a;
+    }
+
+    #fav-vol img {
+        width: 25%;
+    }
+
+    #fav-vol h2 {
+        display: none;
+    }
+
+    #fav-projects-div {
+        width: 100%;
+        height: 100vh;
+        background-color: #22222a;
+        color: #fffefe;
+    }
+
+    #skills-span {
+        text-align: center; 
+        display: inline; 
+        color: #fffeff;
+    }
+
+    #techskills {
+        margin: 0;
+        width: 100%;
+        height: 50vh;
+        border-radius: 20px;
+        background-color: #333;
+        box-shadow: none;
+    }
+    
+    #softskills {
+        margin: 0;
+        width: 100%;
+        height: 50vh;
+        border-radius: 20px;
+        background-color: #333;
+        box-shadow: none;
+    }
+    #contact-card{
+        width: 100%;
+        height: 130vw;
+        border-radius: 20px;
+        background-color: #22222a;
+        top: 425vh;
+        left: 0;
+        position: absolute;
+        box-shadow: none;
+        display: inline;
+        color: #fffefe;
+        text-align: center;
+    }
+    
+    #linkedin {
+        font-size: 30vw; 
+        padding: 0;
+    }
+
+    #linkedin-link {
+        font-size: 6vw;
+    }
+    #mobile-notice {
+        display: inline;
+        font-size: 2.5vh;
     }
 }
+
