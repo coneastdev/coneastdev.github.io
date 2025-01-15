@@ -1,4 +1,4 @@
-## Hi. I am a full time student software/web develpoer at middlesbrough college.
+## Hi. I am a full time digital student at middlesbrough college.
 
 <a href="https://www.linkedin.com/in/coneastdev/">LinkedIn</a>
 you can contact me here.
