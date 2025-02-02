@@ -31,3 +31,4 @@ grub-install --efi-directory=boot
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
 reboot
+EDITOR=nano visudo # %wheel%
